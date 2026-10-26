@@ -1,0 +1,15 @@
+[
+{"id":"HQ8708","sku":"HQ8708","name":"Campus 00s Core Black","sizes":["8"],"aliases":[],"image":"images/HQ8708.webp","category":"Footwear","brand":"adidas","fit":"General"},
+{"id":"B75807","sku":"B75807","name":"Samba OG Black White Gum","sizes":["4.5","5.5","6","6.5","7","8","9.5","10.5","11","11.5"],"aliases":[],"image":"images/B75807-original.webp","category":"Footwear","brand":"adidas","fit":"General"},
+{"id":"JR1256","sku":"JR1256","name":"W-Samba OG Cow Print","sizes":["5.5","6","6.5","7","7.5","8","8.5","9","9.5","10","10.5","11"],"aliases":[],"image":"images/JR1256-original.webp","category":"Footwear","brand":"adidas","fit":"Women"},
+{"id":"HQ7045","sku":"HQ7045","name":"Yeezy Boost 350 V2 Carbon Beluga","sizes":["7.5","8.5"],"aliases":[],"image":"images/HQ7045-original.webp","category":"Footwear","brand":"Yeezy","fit":"General"},
+{"id":"1203A537-001","sku":"1203A537-001","name":"Gel-Kayano 14 Lemon Spark","sizes":["7.5","8","8.5","9","9.5","10"],"aliases":[],"image":"images/1203A537-001-retail.webp","category":"Footwear","brand":"ASICS","fit":"General"},
+{"id":"10001-001","sku":"10001-001","name":"Crocs Classic Clog Black","sizes":["7","9","10","11"],"aliases":[],"image":"images/10001-001-original.webp","category":"Footwear","brand":"Crocs","fit":"General"},
+{"id":"192BT212113F","sku":"192BT212113F","name":"Essentials FW22 Dark Oatmeal Hoodie","brand":"Fear of God Essentials","category":"Apparel","fit":"General","sizes":["L","XL","XXL"],"aliases":[],"image":"images/192BT212113F-verified.webp"},
+{"id":"125BT212062F","sku":"125BT212062F","name":"Essentials FW22 Light Oatmeal Tee","brand":"Fear of God Essentials","category":"Apparel","fit":"General","sizes":["XS","S","M","L","XL"],"aliases":[],"image":"images/125BT212062F-found.webp"},
+{"id":"DD9315-110","sku":"DD9315-110","name":"AJ-1 Low Retro Golf White Croc","sizes":["9","10","10.5","11","12","13"],"aliases":[],"image":"images/DD9315-110-search.webp","category":"Footwear","brand":"Jordan","fit":"General"},
+{"id":"DN3707-160","sku":"DN3707-160","name":"AJ-3 Retro Fire Red","sizes":["11","12","13"],"aliases":[],"image":"images/DN3707-160.webp","category":"Footwear","brand":"Jordan","fit":"General"},
+{"id":"CU3504-006","sku":"CU3504-006","name":"Renew Run 2 Black Anthracite","sizes":["8.5"],"aliases":[],"image":"images/CU3504-006-search.webp","category":"Footwear","brand":"Nike","fit":"General"},
+{"id":"U9060ZGE","sku":"U9060ZGE","name":"New Balance 9060 Black Cement","sizes":["5","5.5","6","6.5","7","7.5","8","8.5","9","10","10.5","11","12"],"aliases":[],"image":"images/U9060ZGE-original.webp","category":"Footwear","brand":"New Balance","fit":"General"},
+{"id":"8102810129","sku":"8102810129","name":"Wild but Cute — Surprise Color","sizes":["OS"],"aliases":["Wild but Cute"],"image":"images/8102810129-box.webp","category":"Accessories","brand":"Labubu","fit":"General"}
+]

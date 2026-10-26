@@ -1,0 +1,16 @@
+/* Extra rules for the multi-page version */
+main.inner{padding-top:110px;min-height:70vh}
+main.inner>section:first-child{border-top:0}
+.page-title{margin:0 5%;padding:40px 0 10px}
+.page-title h1{font-size:clamp(44px,5.4vw,78px);line-height:1.08;margin:22px 0 18px;letter-spacing:-2px;color:#eeeadd}
+.page-title p.lead{max-width:640px;color:var(--muted);line-height:1.8;font-size:15px}
+.brand-card{cursor:pointer;text-decoration:none}
+.steps-page{margin:0 5%;padding:35px 0 60px;border-top:1px solid var(--line)}
+.steps-page .steps{grid-template-columns:repeat(3,1fr);gap:40px}
+.steps-page .steps h3{font-family:Georgia,serif;font-size:26px;font-weight:400;margin:18px 0 12px}
+.steps-page .steps p{font-size:14px;line-height:1.85}
+.steps-page .steps span{font-size:11px;letter-spacing:2px}
+.cta-row{margin:0 5%;padding:0 0 70px}
+.cta-row .button{display:inline-flex;min-width:255px}
+@media(max-width:760px){main.inner{padding-top:130px}.steps-page .steps{grid-template-columns:1fr;gap:28px}.page-title{padding-top:25px}}
+@media(min-width:1500px){.page-title,.steps-page,.cta-row{margin-left:auto;margin-right:auto;width:90%;max-width:1380px}}

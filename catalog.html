@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Laced by MJ — The Catalog</title>
+<meta name="description" content="Browse the Laced by MJ catalog of sneakers, streetwear, accessories and collectibles. Inquire for pricing and availability.">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="gotham.css">
+<link rel="stylesheet" href="pages.css">
+</head>
+<body data-page="catalog">
+<main id="main" class="inner">
+  <section class="catalog" id="catalog">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">THE CATALOG</p>
+        <h2 id="catalog-heading">The full catalog.</h2>
+      </div>
+      <p id="result-count"></p>
+    </div>
+
+    <div class="search-row">
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="Search by name, brand or style code" aria-label="Search the catalog">
+      </div>
+      <button class="filter-toggle" id="mobile-filters" type="button" aria-expanded="false" aria-controls="filters">Filters <span>+</span></button>
+      <label class="sort-label">Sort by
+        <select id="sort">
+          <option value="featured">Featured</option>
+          <option value="az">Name A–Z</option>
+          <option value="za">Name Z–A</option>
+          <option value="brand">Brand</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="catalog-layout">
+      <aside id="filters" aria-label="Filters">
+        <div class="filter-heading"><h3>Filters</h3><button id="reset" type="button">Reset</button></div>
+        <fieldset><legend>Category</legend><div class="filter-options" id="categories"></div></fieldset>
+        <fieldset><legend>Brand</legend><div class="filter-options" id="brands"></div></fieldset>
+        <fieldset><legend>Fit</legend><div class="filter-options" id="fits"></div></fieldset>
+        <label class="size-label" for="size-filter">Size</label>
+        <select id="size-filter"></select>
+        <p class="filter-note">Inventory changes often. Inquire to confirm pricing and availability.</p>
+      </aside>
+
+      <div>
+        <div class="results-bar"><span id="showing"></span><span id="active-filter"></span></div>
+        <div class="grid" id="grid"></div>
+        <div id="empty" hidden>
+          <h3>No styles match your search.</h3>
+          <p>Try fewer filters or a different keyword.</p>
+          <button class="button dark" id="empty-reset" type="button">Clear filters <span>↗</span></button>
+        </div>
+        <div class="load-area">
+          <button class="button outline" id="load-more" type="button" hidden>Load more <span>↓</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="site.js"></script>
+</body>
+</html>
