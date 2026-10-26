@@ -227,7 +227,7 @@ wireChrome();
       fetch('catalog.json').then(r=>{if(!r.ok)throw Error();return r.json();}),
       fetch('config.json').then(r=>r.json()).catch(()=>({}))
     ]);
-    products=p.map((v,i)=>({...v,image:v.image?ASSET_BASE+v.image:v.image,order:i}));
+    products=p.map((v,i)=>({...v,image:v.image&&!/^https?:/.test(v.image)?ASSET_BASE+v.image:v.image,order:i}));
     config={...config,...c};
     inquiry=inquiry.filter((x,i,a)=>products.some(p=>p.id===x.id)&&a.findIndex(y=>y.id===x.id)===i).map(x=>({id:x.id}));
     persist();applyBranding();
