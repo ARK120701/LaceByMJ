@@ -17,7 +17,7 @@ Static catalog website for Laced by MJ: sneakers, streetwear, accessories and co
 - `site.js` – shared script: header, footer, product popup, inquiry popup and form, catalog logic
 - `style.css`, `gotham.css`, `pages.css` – styles (`gotham.css` is the dark theme layered on top of `style.css`)
 - `catalog.json` – product data (sample of 13 items; replace with the full list)
-- `config.json` – business settings: `name`, `email`, `web3formsKey`, `logoUrl`
+- `config.json` – business settings: `name`, `email`, `web3formsKey`, `logoUrl` (set to `images/logo.png`)
 
 ## Setup
 
