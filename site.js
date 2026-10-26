@@ -172,6 +172,10 @@ function applyBranding(){
   $$('header .logo, footer .logo').forEach(el=>{el.innerHTML=config.logoUrl?'<img class="business-logo" src="'+esc(config.logoUrl)+'" alt="'+esc(name)+'">':esc(name);el.setAttribute('aria-label',name+' home');});
   const email=(config.email||'').trim();
   $$('[data-contact-email]').forEach(el=>{el.textContent=email||'Email coming soon';if(email)el.href='mailto:'+email;});
+  const phone=(config.phone||'').replace(/\D/g,'');
+  const pretty=phone.length===10?`(${phone.slice(0,3)}) ${phone.slice(3,6)}-${phone.slice(6)}`:config.phone||'';
+  $$('[data-contact-phone]').forEach(el=>{el.textContent=pretty;if(phone){el.href='tel:+1'+phone;}});
+  $$('[data-contact-text]').forEach(el=>{if(phone)el.href='sms:+1'+phone;else el.hidden=true;});
   $$('[data-contact-button]').forEach(el=>{if(email)el.href='mailto:'+email+'?subject='+encodeURIComponent(name+' inquiry');else el.hidden=true;});
 }
 
