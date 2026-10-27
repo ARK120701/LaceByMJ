@@ -37,7 +37,7 @@ function buildChrome(){
   </header>`);
   document.body.insertAdjacentHTML('beforeend',`
   <footer class="city-footer">
-    <p class="footer-location">NEW YORK CITY<span>/</span>INDIVIDUAL STYLE</p>
+    <p class="footer-location">LOCAL DELIVERY<span>|</span>CONSISTENT COMMUNICATION<span>|</span>GvO</p>
     <div class="footer-end">
       <a class="logo" href="index.html">Laced by MJ</a>
       <div class="footer-links"><a href="contact.html">Contact</a><span>©&nbsp;<span id="year"></span></span></div>
