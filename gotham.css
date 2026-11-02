@@ -23,31 +23,33 @@ dialog{background:#202521;color:var(--ink);border:1px solid #58604f;box-shadow:0
 .nyc-hero-copy .hero-actions .button{margin-top:0;min-width:0}
 .winter-btn{display:inline-flex;align-items:center;gap:12px;background:#ffffff14}
 .winter-btn svg{flex:none}
-.winter-banner{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;min-height:340px;margin:0 5% 60px;border:1px solid #b8b8a455;border-radius:22px;background:#0d0f0e}
-.winter-photo{position:absolute;z-index:-2;right:0;top:0;height:100%;width:auto;max-width:72%;object-fit:cover;object-position:left center}
-.winter-banner:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,#0d0f0e 0,#0d0f0e 34%,#0d0f0ecc 48%,#0d0f0e00 68%)}
-.winter-copy{padding:44px 0 44px 66px;max-width:560px}
-.winter-copy .eyebrow{color:#d3d0c2;font-size:9px}
-.winter-copy h2{font-size:clamp(34px,4.3vw,56px);line-height:1.04;letter-spacing:-1px;text-transform:uppercase;margin:18px 0 16px;color:#eeeadd}
-.winter-sub{font-size:15px;letter-spacing:1px;color:#dedbd0;margin-bottom:26px}
-@media(max-width:760px){.nyc-hero{min-height:0;padding:150px 5% 50px}.hero-signature{display:none}.hero-actions{flex-direction:column;align-items:flex-start;gap:12px}.nyc-hero-copy .hero-actions .button{min-width:235px}.winter-banner{display:block;min-height:0;margin-bottom:40px;border-radius:16px}.winter-photo{position:relative;z-index:0;display:block;order:2;width:100%;max-width:none;height:auto;aspect-ratio:866/328;object-position:center}.winter-banner:before{display:none}.winter-copy{padding:32px 24px 8px;max-width:none}.winter-copy h2{font-size:34px}}
+@media(max-width:760px){.nyc-hero{min-height:0;padding:150px 5% 50px}.hero-signature{display:none}.hero-actions{flex-direction:column;align-items:flex-start;gap:12px}.nyc-hero-copy .hero-actions .button{min-width:235px}}
 .nyc-hero{padding-left:5%}
-.winter-banner{height:340px;min-height:0}
-.winter-copy{max-width:640px;padding:0 0 0 66px}
-.winter-copy h2{font-size:clamp(30px,3.6vw,50px);margin:14px 0 12px}
-.winter-sub{margin-bottom:22px}
-.winter-photo{max-width:none;width:auto}
-@media(max-width:760px){.winter-banner{height:auto}.winter-copy{padding:32px 24px 8px}.winter-photo{height:auto;width:100%}}
+/* ---- Cold Weather Rotation: one continuous campaign banner ---- */
+.winter-banner{--wh:clamp(300px,24vw,400px);--ph:calc(var(--wh)*.76);position:relative;isolation:isolate;overflow:hidden;height:var(--wh);margin:0 5% 60px;border:1px solid #b8b8a455;border-radius:22px;background:#020303}
+.wb-sky{position:absolute;inset:0 0 14% 0;z-index:0;background:url(images/winter-skyline.webp) 72% 30%/cover no-repeat;-webkit-mask-image:linear-gradient(180deg,#000 52%,transparent 100%);mask-image:linear-gradient(180deg,#000 52%,transparent 100%)}
+.wb-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#000000a8 0,#00000073 22%,#00000026 50%,#00000000 70%),linear-gradient(90deg,#000000e6 0,#000000b0 24%,#00000059 44%,#00000000 62%),linear-gradient(0deg,#000 0,#00000000 20%)}
+.wb-ground{position:absolute;z-index:1;left:0;right:0;bottom:0;height:17%;background:url(images/winter-ground.webp) left bottom/auto 100% repeat-x}
+.wb-products{position:absolute;z-index:2;right:0;bottom:0;height:var(--ph);width:auto;max-width:none}
+.wb-snow{position:absolute;inset:0;z-index:3;overflow:hidden;pointer-events:none}
+.wb-snow:before,.wb-snow:after{content:"";position:absolute;left:0;right:0;top:-320px;bottom:0;background-repeat:repeat;mix-blend-mode:screen;will-change:transform}
+.wb-snow:before{background-size:320px 320px;background-image:radial-gradient(3px 3px at 30px 40px,#fff 0,#ffffffb3 45%,#fff0 100%),radial-gradient(2px 2px at 120px 110px,#fff 0,#ffffff99 50%,#fff0 100%),radial-gradient(4px 4px at 210px 70px,#ffffffe6 0,#ffffff66 50%,#fff0 100%),radial-gradient(2px 2px at 270px 200px,#fff 0,#ffffff80 50%,#fff0 100%),radial-gradient(3px 3px at 70px 230px,#fff 0,#ffffff99 50%,#fff0 100%),radial-gradient(2px 2px at 180px 280px,#fff 0,#ffffff80 50%,#fff0 100%);animation:wb-fall-a 16s linear infinite}
+.wb-snow:after{background-size:240px 240px;background-image:radial-gradient(6px 6px at 50px 30px,#ffffffcc 0,#ffffff55 50%,#fff0 100%),radial-gradient(5px 5px at 160px 150px,#ffffffb3 0,#ffffff4d 50%,#fff0 100%),radial-gradient(3px 3px at 110px 220px,#fff 0,#ffffff80 50%,#fff0 100%),radial-gradient(2px 2px at 215px 60px,#fff 0,#ffffff80 50%,#fff0 100%);opacity:.85;animation:wb-fall-b 11s linear infinite}
+@keyframes wb-fall-a{to{transform:translate3d(0,320px,0)}}
+@keyframes wb-fall-b{to{transform:translate3d(0,240px,0)}}
+.winter-copy{position:relative;z-index:4;height:100%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;max-width:calc(100% - var(--ph)*3.25 + var(--ph)*.2);padding:0 0 0 clamp(26px,4.4vw,66px)}
+.winter-copy .eyebrow{color:#d3d0c2;font-size:9px;letter-spacing:2.7px}
+.winter-copy h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(26px,2.9vw,46px);line-height:1.05;letter-spacing:-.5px;text-transform:uppercase;margin:14px 0 12px;color:#f3eee1;text-shadow:0 2px 18px #000}
+.winter-sub{font-size:clamp(12px,1vw,15px);letter-spacing:1px;color:#e4e0d3;margin:0 0 22px}
 .winter-copy .button{display:inline-flex;width:auto;min-width:230px}
-.winter-banner:before{background:linear-gradient(90deg,#0d0f0e 0,#0d0f0e 41%,#0d0f0ee6 45%,#0d0f0e00 62%)}
-/* banner: keep the product photo fully clear (no fade over the boots) */
-.winter-banner:before{display:none}
-.winter-photo{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 3%);mask-image:linear-gradient(90deg,transparent 0,#000 3%)}
-@media(max-width:1100px){.winter-banner{display:block;height:auto;min-height:0}.winter-photo{position:relative;z-index:0;display:block;width:100%;height:auto;max-width:none;aspect-ratio:866/328;object-position:center;-webkit-mask-image:none;mask-image:none}.winter-copy{padding:32px 28px 12px;max-width:none}}
-/* banner v3: snowy scene spans the whole banner; text is confined to the space left of the products */
-.winter-banner{--h:clamp(270px,20vw,340px);height:var(--h);background:#141515}
-.winter-photo{inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:right center;-webkit-mask-image:none;mask-image:none}
-.winter-copy{max-width:calc(100% - 2.55*var(--h) - 30px);padding:0 0 0 clamp(28px,4.4vw,66px)}
-.winter-copy h2{font-size:clamp(26px,3vw,48px)}
-.winter-sub{font-size:clamp(12px,1vw,15px)}
-@media(max-width:1200px){.winter-banner{height:auto;display:block;background:#141515 url(images/winter-sky.webp) left top/cover no-repeat}.winter-photo{position:relative;z-index:0;display:block;width:100%;height:auto;aspect-ratio:836/328;object-fit:cover;object-position:right center;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 22%);mask-image:linear-gradient(180deg,transparent 0,#000 22%)}.winter-copy{max-width:none;padding:32px 28px 20px}.winter-copy h2{font-size:clamp(28px,6vw,44px)}}
+@media(max-width:1100px){
+  .winter-banner{--wh:auto;height:auto;min-height:clamp(430px,122vw,620px);border-radius:18px;margin-bottom:44px}
+  .wb-sky{inset:0 0 10% 0;background-size:auto 92%;background-position:64% 0}
+  .wb-shade{background:linear-gradient(180deg,#000000b0 0,#0000008a 24%,#00000040 48%,#00000000 70%),linear-gradient(90deg,#000000a6 0,#00000059 55%,#00000000 100%),linear-gradient(0deg,#000 0,#00000000 18%)}
+  .wb-ground{height:11%}
+  .wb-products{left:0;right:auto;width:100%;height:auto;bottom:-1px}
+  .winter-copy{height:auto;max-width:none;padding:34px 24px 0;justify-content:flex-start}
+  .winter-copy h2{font-size:clamp(34px,10vw,56px)}
+  .winter-sub{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){.wb-snow:before,.wb-snow:after{animation:none}}
