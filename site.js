@@ -10,7 +10,7 @@ const ASSET_BASE='https://laced-by-mj.yummydream.chatgpt.site/';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let products=[],config={name:'Laced by MJ',email:''},visible=24,activeProduct=null,inquiry=[];
-const selected={brand:new Set(),category:new Set(),fit:new Set()};
+const selected={collection:new Set(),brand:new Set(),category:new Set(),fit:new Set()};
 try{inquiry=JSON.parse(localStorage.getItem('lacedbymj-inquiry')||'[]');if(!Array.isArray(inquiry))inquiry=[];}catch{inquiry=[];}
 
 const friendly=n=>n.replace(/^W-/,'').replace(/^AJ-(\d+)/,'Air Jordan $1').replace(/^AJ1 /,'Air Jordan 1 ').replace(/^NB /,'New Balance ');
@@ -175,6 +175,8 @@ function applyBranding(){
 
 /* ---------- catalog page ---------- */
 function initCatalog(){
+  const winter=products.filter(p=>p.collection).length;
+  $('#collections').innerHTML=`<label><input type="checkbox" data-field="collection" value="Winter"><span>Winter Collection</span><small>${winter}</small></label>`;
   const fields=[['category','categories'],['brand','brands'],['fit','fits']];
   for(const [field,id] of fields){
     const values=[...new Set(products.map(p=>p[field]))].sort();
@@ -188,7 +190,7 @@ function filtered(){
   return result.sort((a,b)=>sort==='az'?friendly(a.name).localeCompare(friendly(b.name)):sort==='za'?friendly(b.name).localeCompare(friendly(a.name)):sort==='brand'?a.brand.localeCompare(b.brand)||a.name.localeCompare(b.name):Number(!!b.image)-Number(!!a.image)||a.order-b.order);
 }
 function render(){
-  $('#catalog-heading').textContent=selected.brand.size===1?[...selected.brand][0]+'.':'The full catalog.';
+  $('#catalog-heading').textContent=selected.collection.has('Winter')?'Winter collection.':selected.brand.size===1?[...selected.brand][0]+'.':'The full catalog.';
   const result=filtered();
   $('#result-count').textContent=`${result.length} ${result.length===1?'style':'styles'}`;
   const count=Object.values(selected).reduce((n,s)=>n+s.size,0);
@@ -213,7 +215,9 @@ function wireCatalog(){
   $('#load-more').addEventListener('click',()=>{visible+=24;render();});
   $('#mobile-filters').addEventListener('click',()=>{const open=$('#filters').classList.toggle('open');$('#mobile-filters').setAttribute('aria-expanded',String(open));$('#mobile-filters span').textContent=open?'−':'+';});
   // arriving from a brand card on the home page: catalog.html?brand=Jordan
-  const brand=new URLSearchParams(location.search).get('brand');
+  const qs=new URLSearchParams(location.search);
+  if(qs.get('collection')==='winter'){selected.collection.add('Winter');$$('#collections input').forEach(i=>i.checked=true);}
+  const brand=qs.get('brand');
   if(brand){selected.brand.add(brand);$$('#brands input').forEach(i=>i.checked=i.value===brand);}
 }
 
@@ -228,6 +232,8 @@ wireChrome();
     ]);
     products=p.map((v,i)=>({...v,image:v.image&&!/^https?:/.test(v.image)?ASSET_BASE+v.image:v.image,order:i}));
     config={...config,...c};
+    const winterIds=new Set(config.winterCollection||[]);
+    products.forEach(p=>{if(winterIds.has(p.id))p.collection='Winter';});
     inquiry=inquiry.filter((x,i,a)=>products.some(p=>p.id===x.id)&&a.findIndex(y=>y.id===x.id)===i).map(x=>({id:x.id}));
     persist();applyBranding();
     if($('#grid')){initCatalog();wireCatalog();render();}
