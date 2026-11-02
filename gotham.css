@@ -41,12 +41,12 @@ dialog{background:#202521;color:var(--ink);border:1px solid #58604f;box-shadow:0
 @media(prefers-reduced-motion:reduce){.winter-snow:before,.winter-snow:after{animation:none}}
 /* phones/tablets: one proportional card (text over the lit skyline, five products on the snow). --u = 1 design pixel of the 780px-wide reference */
 @media(max-width:900px){
-  .winter-rotation{--w:min(92vw,560px);--u:calc(var(--w)/780);display:block;width:var(--w);height:auto;aspect-ratio:780/828;margin:0 auto 44px;border-radius:calc(var(--u)*44);background:#0a0a0a}
-  .winter-link{position:absolute;inset:auto 0 0 0;z-index:1;margin:0}
-  .winter-link picture{display:block}
+  .winter-rotation{--w:min(92vw,560px);--u:calc(var(--w)/780);display:flex;flex-direction:column;width:var(--w);height:auto;aspect-ratio:auto;margin:0 auto 44px;border-radius:calc(var(--u)*44);background:#0a0a0a;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  .winter-link{position:relative;inset:auto;order:2;z-index:1;margin:calc(var(--u)*-110) 0 0}
+  .winter-link picture{display:block;width:90%;margin:0 auto;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
   .winter-link:before{content:"";position:absolute;left:0;right:0;top:0;height:calc(var(--u)*64);z-index:1;pointer-events:none;background:linear-gradient(180deg,#0a0a0a 0,#0a0a0a00 100%)}
   .winter-art{display:block;width:100%;height:auto;object-fit:fill}
-  .winter-copy{display:block;position:relative;z-index:2;padding:calc(var(--u)*71) 0 0 calc(var(--u)*47)}
+  .winter-copy{display:block;order:1;position:relative;z-index:2;padding:calc(var(--u)*71) 0 calc(var(--u)*30) calc(var(--u)*47)}
   .winter-label{margin:0;font-size:calc(var(--u)*22);line-height:1;letter-spacing:.12em;color:#e6e2d6}
   .winter-copy h2{margin:calc(var(--u)*26) 0 0;font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:calc(var(--u)*62);line-height:1.16;letter-spacing:-.01em;white-space:nowrap;color:#f6f2e8;text-shadow:none}
   .winter-description{margin:calc(var(--u)*21) 0 0;font-family:Georgia,'Times New Roman',serif;font-size:calc(var(--u)*38);line-height:1.2;letter-spacing:0;color:#f1ede2}
