@@ -16,3 +16,27 @@ dialog{background:#202521;color:var(--ink);border:1px solid #58604f;box-shadow:0
 
 .contact-page{margin:0 5%;padding:55px 0 65px;border-top:1px solid var(--line)}.contact-page h2{font-size:clamp(34px,4vw,52px);margin:22px 0}.contact-intro{max-width:650px;color:var(--muted);line-height:1.85}.contact-options{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:35px}.contact-option{padding:28px 0;border-top:1px solid var(--line);min-width:0}.contact-email{display:block;font-size:clamp(18px,2.2vw,27px);overflow-wrap:anywhere;margin:20px 0;font-family:Georgia,serif}.contact-option h3{font-family:Georgia,serif;font-size:27px;font-weight:400;margin:20px 0}.contact-option>p:not(.eyebrow){font-size:13px;line-height:1.85;color:var(--muted);margin-bottom:25px}.coming-soon-label{font-size:9px;letter-spacing:2px;color:var(--muted)}@media(min-width:1500px){.contact-page{margin-left:auto;margin-right:auto;width:90%;max-width:1380px}}@media(max-width:760px){.contact-page{padding:35px 0 40px}.contact-options{grid-template-columns:1fr;gap:15px;margin-top:25px}.contact-intro{font-size:13px}.contact-email{font-size:22px}}
 .logo .business-logo{height:60px;max-height:none;max-width:none;width:auto}.city-footer .logo .business-logo{height:56px}@media(max-width:760px){.logo .business-logo{height:50px}.city-footer .logo .business-logo{height:46px}}
+/* home: cold weather rotation */
+.nyc-hero{min-height:560px;padding-top:150px;padding-bottom:70px}
+.hero-signature{bottom:90px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:30px}
+.nyc-hero-copy .hero-actions .button{margin-top:0;min-width:0}
+.winter-btn{display:inline-flex;align-items:center;gap:12px;background:#ffffff14}
+.winter-btn svg{flex:none}
+.winter-banner{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;min-height:340px;margin:0 5% 60px;border:1px solid #b8b8a455;border-radius:22px;background:#0d0f0e}
+.winter-photo{position:absolute;z-index:-2;right:0;top:0;height:100%;width:auto;max-width:72%;object-fit:cover;object-position:left center}
+.winter-banner:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,#0d0f0e 0,#0d0f0e 34%,#0d0f0ecc 48%,#0d0f0e00 68%)}
+.winter-copy{padding:44px 0 44px 66px;max-width:560px}
+.winter-copy .eyebrow{color:#d3d0c2;font-size:9px}
+.winter-copy h2{font-size:clamp(34px,4.3vw,56px);line-height:1.04;letter-spacing:-1px;text-transform:uppercase;margin:18px 0 16px;color:#eeeadd}
+.winter-sub{font-size:15px;letter-spacing:1px;color:#dedbd0;margin-bottom:26px}
+@media(max-width:760px){.nyc-hero{min-height:0;padding:150px 5% 50px}.hero-signature{display:none}.hero-actions{flex-direction:column;align-items:flex-start;gap:12px}.nyc-hero-copy .hero-actions .button{min-width:235px}.winter-banner{display:block;min-height:0;margin-bottom:40px;border-radius:16px}.winter-photo{position:relative;z-index:0;display:block;order:2;width:100%;max-width:none;height:auto;aspect-ratio:866/328;object-position:center}.winter-banner:before{display:none}.winter-copy{padding:32px 24px 8px;max-width:none}.winter-copy h2{font-size:34px}}
+.nyc-hero{padding-left:5%}
+.winter-banner{height:340px;min-height:0}
+.winter-copy{max-width:640px;padding:0 0 0 66px}
+.winter-copy h2{font-size:clamp(30px,3.6vw,50px);margin:14px 0 12px}
+.winter-sub{margin-bottom:22px}
+.winter-photo{max-width:none;width:auto}
+@media(max-width:760px){.winter-banner{height:auto}.winter-copy{padding:32px 24px 8px}.winter-photo{height:auto;width:100%}}
+.winter-copy .button{display:inline-flex;width:auto;min-width:230px}
+.winter-banner:before{background:linear-gradient(90deg,#0d0f0e 0,#0d0f0e 41%,#0d0f0ee6 45%,#0d0f0e00 62%)}
