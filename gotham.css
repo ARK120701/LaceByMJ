@@ -39,17 +39,18 @@ dialog{background:#202521;color:var(--ink);border:1px solid #58604f;box-shadow:0
 @keyframes wb-fall-a{to{transform:translate3d(0,320px,0)}}
 @keyframes wb-fall-b{to{transform:translate3d(0,240px,0)}}
 @media(prefers-reduced-motion:reduce){.winter-snow:before,.winter-snow:after{animation:none}}
-/* phones: real text over the skyline, then the products photo underneath (separate crop, plain stacked blocks) */
+/* phones/tablets: one proportional card (text over the lit skyline, five products on the snow). --u = 1 design pixel of the 780px-wide reference */
 @media(max-width:900px){
-  .winter-rotation{display:flex;flex-direction:column;aspect-ratio:auto;height:auto;border-radius:20px;margin:0 4% 44px;background:#0a0a0a}
-  .winter-copy{order:1;display:flex;flex-direction:column;align-items:flex-start;position:relative;z-index:1;padding:30px 22px 30px;background:linear-gradient(180deg,#000000bf 0,#00000085 45%,#0a0a0a 100%),url(images/winter-skyline.webp) 66% 0/cover no-repeat}
-  .winter-label{margin:0;color:#d3d0c2;font-size:9px;letter-spacing:2.7px}
-  .winter-copy h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(32px,9.6vw,50px);line-height:1.05;letter-spacing:-.5px;color:#f3eee1;margin:14px 0 12px;text-shadow:0 2px 18px #000}
-  .winter-description{font-size:14px;letter-spacing:1px;color:#e4e0d3;margin:0 0 22px}
-  .winter-cta{display:flex;width:100%;max-width:300px;justify-content:space-between}
-  .winter-link{order:2;position:relative;inset:auto;z-index:1;margin-top:-1px}
+  .winter-rotation{--w:min(92vw,560px);--u:calc(var(--w)/780);display:block;width:var(--w);height:auto;aspect-ratio:780/828;margin:0 auto 44px;border-radius:calc(var(--u)*44);background:#0a0a0a}
+  .winter-link{position:absolute;inset:auto 0 0 0;z-index:1;margin:0}
   .winter-link picture{display:block}
-  .winter-link:before{content:"";position:absolute;left:0;right:0;top:0;height:24%;z-index:1;pointer-events:none;background:linear-gradient(180deg,#0a0a0a 0,#0a0a0a00 100%)}
-  .winter-art{width:100%;height:auto;object-fit:fill}
+  .winter-link:before{content:"";position:absolute;left:0;right:0;top:0;height:calc(var(--u)*64);z-index:1;pointer-events:none;background:linear-gradient(180deg,#0a0a0a 0,#0a0a0a00 100%)}
+  .winter-art{display:block;width:100%;height:auto;object-fit:fill}
+  .winter-copy{display:block;position:relative;z-index:2;padding:calc(var(--u)*71) 0 0 calc(var(--u)*47)}
+  .winter-label{margin:0;font-size:calc(var(--u)*22);line-height:1;letter-spacing:.12em;color:#e6e2d6}
+  .winter-copy h2{margin:calc(var(--u)*26) 0 0;font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:calc(var(--u)*62);line-height:1.16;letter-spacing:-.01em;white-space:nowrap;color:#f6f2e8;text-shadow:none}
+  .winter-description{margin:calc(var(--u)*21) 0 0;font-family:Georgia,'Times New Roman',serif;font-size:calc(var(--u)*38);line-height:1.2;letter-spacing:0;color:#f1ede2}
+  .winter-cta{display:flex;align-items:center;justify-content:space-between;box-sizing:border-box;width:calc(var(--u)*394);height:calc(var(--u)*76);min-height:0;margin-top:calc(var(--u)*41);padding:0 calc(var(--u)*30) 0 calc(var(--u)*40);font-size:calc(var(--u)*23);letter-spacing:.04em;white-space:nowrap;border:1px solid #f1eee6;border-radius:0;background:transparent;color:#f6f2e8}
+  .winter-cta span{font-size:calc(var(--u)*34)}
   .hero-actions{width:100%;max-width:340px}.hero-actions .button{width:100%;justify-content:space-between}
 }
