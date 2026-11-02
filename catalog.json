@@ -4548,5 +4548,25 @@
   "category": "Footwear",
   "brand": "Nike",
   "fit": "General"
+ },
+ {
+  "id": "TB110073-001",
+  "sku": "TB110073-001",
+  "name": "Premium 6\" Waterproof Boot Black",
+  "aliases": [],
+  "image": "./images/products/TB110073-001.webp",
+  "category": "Footwear",
+  "brand": "Timberland",
+  "fit": "General"
+ },
+ {
+  "id": "DT-MONO-WREATH-BLK-SS25",
+  "sku": "DT-MONO-WREATH-BLK-SS25",
+  "name": "Denim Tears Mono Wreath Sweatpants Black SS25",
+  "aliases": [],
+  "image": "./images/products/DT-MONO-WREATH-BLK-SS25.webp",
+  "category": "Apparel",
+  "brand": "Denim Tears",
+  "fit": "General"
  }
 ]

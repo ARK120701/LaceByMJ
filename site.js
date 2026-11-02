@@ -230,7 +230,7 @@ wireChrome();
       fetch('catalog.json').then(r=>{if(!r.ok)throw Error();return r.json();}),
       fetch('config.json').then(r=>r.json()).catch(()=>({}))
     ]);
-    products=p.map((v,i)=>({...v,image:v.image&&!/^https?:/.test(v.image)?ASSET_BASE+v.image:v.image,order:i}));
+    products=p.map((v,i)=>({...v,image:v.image&&!/^(https?:|\.\/)/.test(v.image)?ASSET_BASE+v.image:v.image,order:i}));
     config={...config,...c};
     const winterIds=new Set(config.winterCollection||[]);
     products.forEach(p=>{if(winterIds.has(p.id))p.collection='Winter';});
